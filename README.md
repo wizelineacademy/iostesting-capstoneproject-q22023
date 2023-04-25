@@ -1,12 +1,11 @@
-# iOS Testing Mini Bootcamp 2022 🔥🚀
-Thanks for participating in this mini bootcamp! 🤓
+# iOS Testing Bootcamp 🔥🚀
+Thanks for participating in this bootcamp! 🤓
 
-This mini bootcamps is taking place online from **May 16th to June x, 2022**.
 
-This README file contains the instructions for the mini bootcamps live-sessions and the final project along with the summary
+This README file contains the instructions for the live-sessions and the final project along with the summary.
 
 # Summary
-This summary is what the mini bootcamp is about through all its duration
+This summary is what the bootcamp is about throughout its duration. 
 
 ## Introduction
 - What is testing?
@@ -35,16 +34,15 @@ The project is a twitter-like app that will be displaying tweets in a timeline.
 ![Simulator Screen Shot - iPhone 12 mini - 2022-04-28 at 13 58 03](https://user-images.githubusercontent.com/103285773/165826622-f1a78e4a-172c-4131-9c3c-4804a3c78134.png)
 
 ## The challenge
-Your challenge is about implementing the **Search Trending tweets** 🔥 or **Compose New tweet** or **Displaying User profile** or **Displaying tweet detail** applying what you learn in through this mini bootcamp
-and also applying your knowledge for acheive it. It's up to you. 🖖🏼
+Your challenge is about implementing the **Search Trending tweets** or **Compose New tweet** or **Displaying User profile** or **Displaying tweet detail** applying what you learn in through this bootcamp and also applying your knowledge for acheive it. It's up to you.
 
-Happy coding! 📲🍺
+Happy coding!
 
 ## Rubric
-Get >= 95% code coverage in the time set!! 🔥
-Everything is up to you. You can apply the patterns you want, the UI design you want; let your creativity be free 🌈
+Get >= 95% code coverage in the time set!!
+Everything is up to you. You can apply the patterns you want, the UI design you want; let your creativity be free.
 
-Just please avoid using third party libraries. You can use it for doing some animations like _Lottie_ :)
+Just please avoid using third party libraries. You can use it for doing some animations like _Lottie_ 
 
 # Technical stuff
 
