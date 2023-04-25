@@ -1,5 +1,5 @@
-# iOS Testing Bootcamp 🔥🚀
-Thanks for participating in this bootcamp! 🤓
+# iOS Testing Bootcamp 
+Thanks for participating in this bootcamp!
 
 
 This README file contains the instructions for the live-sessions and the final project along with the summary.
