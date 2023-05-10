@@ -1,8 +1,19 @@
-# Xcode
+## MacOS
 
-## User settings
-xcuserdata/
+.DS_store
 
-# OS
-.DS_Store
+## Playgrounds
 
+*.playground/contents.xcplayground
+*.playground/playground.xcworkspace/contents.xcworkspacedata
+*.playground/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
+*.playground/playground.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+
+## Xcode
+
+*/*.xcodeproj/xcuserdata/
+*/*.xcodeproj/xcshareddata/
+*/*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+*/*.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*/*.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
+*/*.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
