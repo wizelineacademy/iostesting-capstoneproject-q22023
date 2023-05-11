@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */; };
+		6CF14EE02A0C768C0033FF45 /* MiniBootcampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
 		9536974B2A0C4A7C0083BD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9536974A2A0C4A7C0083BD2C /* Assets.xcassets */; };
 		9536974E2A0C4A7C0083BD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6CF14EE12A0C768C0033FF45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 953697362A0C4A790083BD2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9536973D2A0C4A790083BD2C;
+			remoteInfo = MiniBootcamp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		6CB677DC2A0D93D20016EBF9 /* MiniBootcamp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MiniBootcamp.xctestplan; sourceTree = "<group>"; };
+		6CF14EDD2A0C768C0033FF45 /* MiniBootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniBootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBootcampTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953697432A0C4A790083BD2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -23,6 +39,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6CF14EDA2A0C768C0033FF45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9536973B2A0C4A790083BD2C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,10 +56,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CF14EDE2A0C768C0033FF45 /* MiniBootcampTests */ = {
+			isa = PBXGroup;
+			children = (
+				6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */,
+			);
+			path = MiniBootcampTests;
+			sourceTree = "<group>";
+		};
 		953697352A0C4A790083BD2C = {
 			isa = PBXGroup;
 			children = (
+				6CB677DC2A0D93D20016EBF9 /* MiniBootcamp.xctestplan */,
 				953697402A0C4A790083BD2C /* MiniBootcamp */,
+				6CF14EDE2A0C768C0033FF45 /* MiniBootcampTests */,
 				9536973F2A0C4A790083BD2C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				9536973E2A0C4A790083BD2C /* MiniBootcamp.app */,
+				6CF14EDD2A0C768C0033FF45 /* MiniBootcampTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,6 +91,7 @@
 				953697432A0C4A790083BD2C /* SceneDelegate.swift */,
 				9536974A2A0C4A7C0083BD2C /* Assets.xcassets */,
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
+				6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -64,6 +99,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6CF14EDC2A0C768C0033FF45 /* MiniBootcampTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF14EE52A0C768C0033FF45 /* Build configuration list for PBXNativeTarget "MiniBootcampTests" */;
+			buildPhases = (
+				6CF14ED92A0C768C0033FF45 /* Sources */,
+				6CF14EDA2A0C768C0033FF45 /* Frameworks */,
+				6CF14EDB2A0C768C0033FF45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CF14EE22A0C768C0033FF45 /* PBXTargetDependency */,
+			);
+			name = MiniBootcampTests;
+			productName = MiniBootcampTests;
+			productReference = 6CF14EDD2A0C768C0033FF45 /* MiniBootcampTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9536973D2A0C4A790083BD2C /* MiniBootcamp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 953697522A0C4A7C0083BD2C /* Build configuration list for PBXNativeTarget "MiniBootcamp" */;
@@ -88,9 +141,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					6CF14EDC2A0C768C0033FF45 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 9536973D2A0C4A790083BD2C;
+					};
 					9536973D2A0C4A790083BD2C = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -110,11 +167,19 @@
 			projectRoot = "";
 			targets = (
 				9536973D2A0C4A790083BD2C /* MiniBootcamp */,
+				6CF14EDC2A0C768C0033FF45 /* MiniBootcampTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6CF14EDB2A0C768C0033FF45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9536973C2A0C4A790083BD2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,16 +192,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6CF14ED92A0C768C0033FF45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF14EE02A0C768C0033FF45 /* MiniBootcampTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9536973A2A0C4A790083BD2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
+				6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CF14EE22A0C768C0033FF45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9536973D2A0C4A790083BD2C /* MiniBootcamp */;
+			targetProxy = 6CF14EE12A0C768C0033FF45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */ = {
@@ -150,6 +232,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6CF14EE32A0C768C0033FF45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28Z45T22J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.MiniBootcampTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniBootcamp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniBootcamp";
+			};
+			name = Debug;
+		};
+		6CF14EE42A0C768C0033FF45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28Z45T22J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rotadevsolutions.MiniBootcampTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniBootcamp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniBootcamp";
+			};
+			name = Release;
+		};
 		953697502A0C4A7C0083BD2C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6CF14EE52A0C768C0033FF45 /* Build configuration list for PBXNativeTarget "MiniBootcampTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF14EE32A0C768C0033FF45 /* Debug */,
+				6CF14EE42A0C768C0033FF45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		953697392A0C4A790083BD2C /* Build configuration list for PBXProject "MiniBootcamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

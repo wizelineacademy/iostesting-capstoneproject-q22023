@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "C89ECB71-6E98-458A-A9EF-1089AA876C02",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MiniBootcamp.xcodeproj",
+      "identifier" : "9536973D2A0C4A790083BD2C",
+      "name" : "MiniBootcamp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MiniBootcamp.xcodeproj",
+        "identifier" : "6CF14EDC2A0C768C0033FF45",
+        "name" : "MiniBootcampTests"
+      }
+    }
+  ],
+  "version" : 1
+}
