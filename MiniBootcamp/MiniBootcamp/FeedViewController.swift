@@ -27,6 +27,7 @@ final class FeedViewController: UIViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
+        tableView.register(TweetCell.self, forCellReuseIdentifier: TweetCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -41,11 +42,18 @@ final class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        .zero
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier) as? TweetCell else { return UITableViewCell() }
+        
+        return cell
     }
     
+}
+
+
+final class TweetCell: UITableViewCell {
+    static let identifier = "TweetCell"
 }
