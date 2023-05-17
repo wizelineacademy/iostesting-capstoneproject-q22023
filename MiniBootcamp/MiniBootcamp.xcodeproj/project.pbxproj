@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95157E582A159EFE00B9C720 /* TweetCellTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
 		9536974B2A0C4A7C0083BD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9536974A2A0C4A7C0083BD2C /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95157E582A159EFE00B9C720 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953697432A0C4A790083BD2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
+				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

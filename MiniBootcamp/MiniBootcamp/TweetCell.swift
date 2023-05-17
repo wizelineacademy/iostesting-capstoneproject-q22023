@@ -111,4 +111,28 @@ final class TweetCell: UITableViewCell {
             contentLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
         ])
     }
+    
+    var viewModel: TweetCellViewModel? {
+        didSet {
+            configureInformation()
+        }
+    }
+    
+    private func configureInformation() {
+        contentLabel.text = viewModel?.content
+        nameLabel.text = viewModel?.profileName
+        usernameLabel.text = viewModel?.userName
+        userImageView.image = viewModel?.profilePicture
+    }
+}
+
+struct TweetCellViewModel {
+    let userName: String
+    let profileName: String
+    let profilePictureName: String
+    let content: String
+    
+    var profilePicture: UIImage? {
+        return UIImage(named: profilePictureName)
+    }
 }
