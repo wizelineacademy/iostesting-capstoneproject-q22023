@@ -50,7 +50,3 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
-final class TweetCell: UITableViewCell {
-    static let identifier = "TweetCell"
-}

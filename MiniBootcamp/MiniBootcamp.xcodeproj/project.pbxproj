@@ -13,6 +13,8 @@
 		9536974E2A0C4A7C0083BD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */; };
 		95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */; };
 		95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E2922A0C6B9500AB700E /* FeedViewController.swift */; };
+		95A8EFE72A157EB7002423F3 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8EFE62A157EB7002423F3 /* TweetCell.swift */; };
+		95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		95A1E2872A0C696A00AB700E /* MiniBootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniBootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 		95A1E2922A0C6B9500AB700E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		95A8EFE62A157EB7002423F3 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +82,12 @@
 			children = (
 				9536974F2A0C4A7C0083BD2C /* Info.plist */,
 				953697412A0C4A790083BD2C /* AppDelegate.swift */,
+				95A1E2922A0C6B9500AB700E /* FeedViewController.swift */,
 				953697432A0C4A790083BD2C /* SceneDelegate.swift */,
+				95A8EFE62A157EB7002423F3 /* TweetCell.swift */,
 				9536974A2A0C4A7C0083BD2C /* Assets.xcassets */,
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
-				95A1E2922A0C6B9500AB700E /* FeedViewController.swift */,
+				95A8EFE82A157F25002423F3 /* Utilities */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -92,6 +98,14 @@
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 			);
 			path = MiniBootcampTests;
+			sourceTree = "<group>";
+		};
+		95A8EFE82A157F25002423F3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,8 @@
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
+				95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */,
+				95A8EFE72A157EB7002423F3 /* TweetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
