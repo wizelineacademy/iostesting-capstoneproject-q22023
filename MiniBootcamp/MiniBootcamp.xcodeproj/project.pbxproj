@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C248EA82A159F1F004F6647 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248EA72A159F1F004F6647 /* UIFont+Extensions.swift */; };
+		6C248EAA2A159F40004F6647 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248EA92A159F40004F6647 /* TweetCell.swift */; };
+		6C248EAC2A159F80004F6647 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248EAB2A159F80004F6647 /* TweetCellTests.swift */; };
 		6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */; };
-		6CF14EE02A0C768C0033FF45 /* MiniBootcampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */; };
+		6CF14EE02A0C768C0033FF45 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14EDF2A0C768C0033FF45 /* FeedViewControllerTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
 		9536974B2A0C4A7C0083BD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9536974A2A0C4A7C0083BD2C /* Assets.xcassets */; };
@@ -26,10 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C248EA72A159F1F004F6647 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		6C248EA92A159F40004F6647 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		6C248EAB2A159F80004F6647 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		6CB677DC2A0D93D20016EBF9 /* MiniBootcamp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MiniBootcamp.xctestplan; sourceTree = "<group>"; };
 		6CF14EDD2A0C768C0033FF45 /* MiniBootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniBootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBootcampTests.swift; sourceTree = "<group>"; };
+		6CF14EDF2A0C768C0033FF45 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953697432A0C4A790083BD2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,10 +62,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C248EA62A159F0D004F6647 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6C248EA72A159F1F004F6647 /* UIFont+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		6CF14EDE2A0C768C0033FF45 /* MiniBootcampTests */ = {
 			isa = PBXGroup;
 			children = (
-				6CF14EDF2A0C768C0033FF45 /* MiniBootcampTests.swift */,
+				6CF14EDF2A0C768C0033FF45 /* FeedViewControllerTests.swift */,
+				6C248EAB2A159F80004F6647 /* TweetCellTests.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -86,12 +101,14 @@
 		953697402A0C4A790083BD2C /* MiniBootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				6C248EA62A159F0D004F6647 /* Utilities */,
 				9536974F2A0C4A7C0083BD2C /* Info.plist */,
 				953697412A0C4A790083BD2C /* AppDelegate.swift */,
 				953697432A0C4A790083BD2C /* SceneDelegate.swift */,
 				9536974A2A0C4A7C0083BD2C /* Assets.xcassets */,
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
 				6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */,
+				6C248EA92A159F40004F6647 /* TweetCell.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -196,7 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CF14EE02A0C768C0033FF45 /* MiniBootcampTests.swift in Sources */,
+				6CF14EE02A0C768C0033FF45 /* FeedViewControllerTests.swift in Sources */,
+				6C248EAC2A159F80004F6647 /* TweetCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +224,8 @@
 			files = (
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
 				6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */,
+				6C248EAA2A159F40004F6647 /* TweetCell.swift in Sources */,
+				6C248EA82A159F1F004F6647 /* UIFont+Extensions.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

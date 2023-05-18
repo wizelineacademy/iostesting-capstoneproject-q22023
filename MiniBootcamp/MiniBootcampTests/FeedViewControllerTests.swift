@@ -20,9 +20,12 @@ final class FeedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
     }
     
+    override  func tearDown() {
+        super.tearDown()
+        sut = nil
+    }
+    
     func test_createFeedViewController(){
-        
-        
         XCTAssertEqual(sut.title, "TweetFeed")
         XCTAssertEqual(sut.view.backgroundColor, UIColor.white)
     }
@@ -61,10 +64,4 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertNotNil(cell, "The cell should not be nil")
     }
     
-    
-
-    override  func tearDown() {
-        super.tearDown()
-        sut = nil
-    }
 }
