@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum FetchState {
+    case loading
+    case failure
+    case success
+}
+
 final class FeedViewController: UIViewController {
     
     private(set) lazy var tableView: UITableView = {
@@ -18,10 +24,26 @@ final class FeedViewController: UIViewController {
         return tableView
     }()
     
+    let observer: Observer<FetchState> = Observer<FetchState>()
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         title = "TweetFeed"
         view.backgroundColor = .white
         setupTableView()
+        binding()
+    }
+    
+    private func binding() {
+        observer.bind { [unowned self] state in
+            switch state {
+            case .loading:
+                let loader = UIActivityIndicatorView(frame: view.bounds)
+                self.view.addSubview(loader)
+            default:
+                break
+            }
+        }
     }
     
     private func setupTableView() {

@@ -56,4 +56,14 @@ final class FeedViewControllerTests: XCTestCase {
         
         XCTAssert(cell is TweetCell)
     }
+    
+    func test_binding_showLoaderWhenFetchingTweets() {
+        let sut = FeedViewController()
+        
+        sut.loadViewIfNeeded()
+        sut.observer.updateValue(with: .loading)
+        
+        let loader = sut.view.subviews.last
+        XCTAssertTrue(loader is UIActivityIndicatorView)
+    }
 }

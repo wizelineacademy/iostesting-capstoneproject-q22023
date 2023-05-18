@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23F052AF2A15A62200447E94 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052AE2A15A62200447E94 /* Observer.swift */; };
 		95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95157E582A159EFE00B9C720 /* TweetCellTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23F052AE2A15A62200447E94 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		95157E582A159EFE00B9C720 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */,
+				23F052AE2A15A62200447E94 /* Observer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
+				23F052AF2A15A62200447E94 /* Observer.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
 				95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */,
