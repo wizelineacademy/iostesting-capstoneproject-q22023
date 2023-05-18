@@ -61,7 +61,7 @@ final class FeedViewControllerTests: XCTestCase {
         let sut = FeedViewController()
         
         sut.loadViewIfNeeded()
-        sut.observer.updateValue(with: .loading)
+        sut.viewModel.observer.updateValue(with: .loading)
         
         let loader = sut.view.subviews.last
         XCTAssertTrue(loader is UIActivityIndicatorView)
@@ -73,8 +73,8 @@ final class FeedViewControllerTests: XCTestCase {
         
         // When
         sut.loadViewIfNeeded()
-        sut.observer.updateValue(with: .loading)
-        sut.observer.updateValue(with: .failure)
+        sut.viewModel.observer.updateValue(with: .loading)
+        sut.viewModel.observer.updateValue(with: .failure)
         
         // Then
         let loader = sut.view.subviews.last
@@ -87,8 +87,8 @@ final class FeedViewControllerTests: XCTestCase {
         
         // When
         sut.loadViewIfNeeded()
-        sut.observer.updateValue(with: .loading)
-        sut.observer.updateValue(with: .success)
+        sut.viewModel.observer.updateValue(with: .loading)
+        sut.viewModel.observer.updateValue(with: .success)
         
         // Then
         let loader = sut.view.subviews.last
