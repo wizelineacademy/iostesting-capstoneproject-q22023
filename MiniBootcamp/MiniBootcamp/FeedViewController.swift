@@ -45,6 +45,8 @@ final class FeedViewController: UIViewController {
                 self.view.addSubview(loader)
             case .failure:
                 self.loader.removeFromSuperview()
+            case .success:
+                self.loader.removeFromSuperview()
             default:
                 break
             }
