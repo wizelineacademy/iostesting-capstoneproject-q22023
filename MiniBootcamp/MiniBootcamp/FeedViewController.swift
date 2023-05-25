@@ -44,6 +44,8 @@ final class FeedViewController: UIViewController {
             case .loading:
 //                let loader = UIActivityIndicatorView(frame: view.bounds)
                 self.view.addSubview(loader)
+            case .success:
+                self.loader.removeFromSuperview()
             case .failure:
                 self.loader.removeFromSuperview()
             default:
