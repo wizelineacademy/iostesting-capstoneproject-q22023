@@ -11,13 +11,15 @@ This summary is what the bootcamp is about throughout its duration.
 - What is testing?
 - Testing in iOS
 
-## Testing artifacts
+## Content
 - TDD
 - Unit Testing
-- Mock
-- Stub
-- Spy
 - Dummy
+- Fake
+- Stub
+- Mock
+- Spy
+
 
 ## UI Testing
 - UI Testing in Xcode
@@ -31,10 +33,10 @@ For running the project, just clone it in your local and _Build & Run_.
 # The Project
 The project is a twitter-like app that will be displaying tweets in a timeline.
 
-![Simulator Screen Shot - iPhone 12 mini - 2022-04-28 at 13 58 03](https://user-images.githubusercontent.com/103285773/165826622-f1a78e4a-172c-4131-9c3c-4804a3c78134.png)
+<img src="https://github.com/wizelineacademy/iostesting-capstoneproject-q22023/assets/105450247/789e4e80-4ca1-42a6-9dd1-ab1d5795a4e7" width="300" height="620"/>
 
 ## The challenge
-Your challenge is about implementing the **Search Trending tweets** or **Compose New tweet** or **Displaying User profile** or **Displaying tweet detail** applying what you learn in through this bootcamp and also applying your knowledge for acheive it. It's up to you.
+Your challenge is about finish Feed feature by displaying tweets and fetching data from [Tweets Endpoint](https://gist.githubusercontent.com/ferdelarosa-wz/0c73ab5311c845fb7dfac4b62ab6c652/raw/6a39cffe68d87f1613f222372c62bd4e89ad06fa/tweets.json). Following and applying what you learn in through this bootcamp and also applying your knowledge for acheive it. It's up to you.
 
 Happy coding!
 
@@ -42,26 +44,10 @@ Happy coding!
 Get >= 95% code coverage in the time set!!
 Everything is up to you. You can apply the patterns you want, the UI design you want; let your creativity be free.
 
-Just please avoid using third party libraries. You can use it for doing some animations like _Lottie_ 
+Please avoid using third party libraries. You can use it for doing some animations like _Lottie_ 
 
-# Technical stuff
+# Resources
 
-## Search endpoint
+Tweets endpoint
 
-**GET**
-`/api/search/\(string)`
-
-## Compose a tweet
-
-**POST**
-`/api/statuses/update`
-
-`application/x-www-form-urlencoded`
-
-`Content-Type`
-
-
-## User profile
-
-**GET**
-`/api/user`
+> https://gist.githubusercontent.com/ferdelarosa-wz/0c73ab5311c845fb7dfac4b62ab6c652/raw/6a39cffe68d87f1613f222372c62bd4e89ad06fa/tweets.json
