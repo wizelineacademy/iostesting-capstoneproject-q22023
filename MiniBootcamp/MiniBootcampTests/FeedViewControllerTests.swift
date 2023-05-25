@@ -73,4 +73,18 @@ final class FeedViewControllerTests: XCTestCase {
             let loader = sut.view.subviews.last
             XCTAssertTrue(loader is UIActivityIndicatorView)
         }
+    
+    func test_binding_hideLoaderOnFailedFetch() {
+           // Given
+           let sut = FeedViewController()
+
+           // When
+           sut.loadViewIfNeeded()
+           sut.observer.updateValue(with: .loading)
+           sut.observer.updateValue(with: .failure)
+
+           // Then
+           let loader = sut.view.subviews.last
+           XCTAssertFalse(loader is UIActivityIndicatorView)
+       }
 }

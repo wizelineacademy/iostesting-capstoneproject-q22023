@@ -24,6 +24,10 @@ final class FeedViewController: UIViewController {
             return tableView
         }()
     
+    private(set) lazy var loader: UIActivityIndicatorView = {
+            UIActivityIndicatorView(frame: view.bounds)
+        }()
+    
     let observer: Observer<FetchState> = Observer<FetchState>()
     
     override func viewDidLoad() {
@@ -38,8 +42,10 @@ final class FeedViewController: UIViewController {
         observer.bind { [unowned self] state in
             switch state {
             case .loading:
-                let loader = UIActivityIndicatorView(frame: view.bounds)
+//                let loader = UIActivityIndicatorView(frame: view.bounds)
                 self.view.addSubview(loader)
+            case .failure:
+                self.loader.removeFromSuperview()
             default:
                 break
             }
