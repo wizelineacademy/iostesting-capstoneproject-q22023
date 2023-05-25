@@ -64,4 +64,13 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertNotNil(cell, "The cell should not be nil")
     }
     
+    func test_binding_showLoaderWhenFetchingTweets() {
+            let sut = FeedViewController()
+
+            sut.loadViewIfNeeded()
+            sut.observer.updateValue(with: .loading)
+
+            let loader = sut.view.subviews.last
+            XCTAssertTrue(loader is UIActivityIndicatorView)
+        }
 }
