@@ -11,6 +11,7 @@
 		6C248EAA2A159F40004F6647 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248EA92A159F40004F6647 /* TweetCell.swift */; };
 		6C248EAC2A159F80004F6647 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248EAB2A159F80004F6647 /* TweetCellTests.swift */; };
 		6C59DAFE2A1F223E00972976 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C59DAFD2A1F223E00972976 /* Observer.swift */; };
+		6C59DB002A1F24B900972976 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C59DAFF2A1F24B900972976 /* FeedViewModel.swift */; };
 		6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */; };
 		6CF14EE02A0C768C0033FF45 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14EDF2A0C768C0033FF45 /* FeedViewControllerTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		6C248EA92A159F40004F6647 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		6C248EAB2A159F80004F6647 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		6C59DAFD2A1F223E00972976 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		6C59DAFF2A1F24B900972976 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		6CB677DC2A0D93D20016EBF9 /* MiniBootcamp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MiniBootcamp.xctestplan; sourceTree = "<group>"; };
 		6CF14EDD2A0C768C0033FF45 /* MiniBootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniBootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
 				6CB677DA2A0D914D0016EBF9 /* FeedViewController.swift */,
 				6C248EA92A159F40004F6647 /* TweetCell.swift */,
+				6C59DAFF2A1F24B900972976 /* FeedViewModel.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C59DB002A1F24B900972976 /* FeedViewModel.swift in Sources */,
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
 				6C59DAFE2A1F223E00972976 /* Observer.swift in Sources */,
 				6CB677DB2A0D914D0016EBF9 /* FeedViewController.swift in Sources */,

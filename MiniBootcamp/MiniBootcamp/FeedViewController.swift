@@ -28,18 +28,18 @@ final class FeedViewController: UIViewController {
             UIActivityIndicatorView(frame: view.bounds)
         }()
     
-    let observer: Observer<FetchState> = Observer<FetchState>()
+    var viewModel: FeedViewModel = FeedViewModel()
     
     override func viewDidLoad() {
         
-        title = "TweetFeed"
-        view.backgroundColor = .white
+        title = viewModel.title
+        view.backgroundColor = viewModel.backgroundColor
         setupTableView()
         binding()
     }
     
     private func binding() {
-        observer.bind { [unowned self] state in
+        viewModel.observer.bind { [unowned self] state in
             switch state {
             case .loading:
 //                let loader = UIActivityIndicatorView(frame: view.bounds)
