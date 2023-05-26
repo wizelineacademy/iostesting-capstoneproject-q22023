@@ -37,4 +37,13 @@ class FeedViewModel {
             }
         }
     }
+    
+    func getErrorAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Error", message: "🥺", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        return alert
+    }
 }
