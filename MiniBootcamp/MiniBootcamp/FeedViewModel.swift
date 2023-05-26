@@ -23,6 +23,6 @@ class FeedViewModel {
         self.title = title
     }
     func fetchTimeline() {
-        bind?(.success)
+        observer.updateValue(with: .failure)
     }
 }

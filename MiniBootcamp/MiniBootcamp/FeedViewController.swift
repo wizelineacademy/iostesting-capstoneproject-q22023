@@ -36,6 +36,7 @@ final class FeedViewController: UIViewController {
         view.backgroundColor = viewModel.backgroundColor
         setupTableView()
         binding()
+        fetchTimeline()
     }
     
     private func binding() {
@@ -45,12 +46,26 @@ final class FeedViewController: UIViewController {
                 self.view.addSubview(loader)
             case .failure:
                 self.loader.removeFromSuperview()
+                presentErrorAlert()
             case .success:
                 self.loader.removeFromSuperview()
             default:
                 break
             }
         }
+    }
+    
+    private func fetchTimeline() {
+        viewModel.fetchTimeline()
+    }
+    
+    private func presentErrorAlert() {
+        let alert = UIAlertController(title: "Error", message: "🥺", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
     private func setupTableView() {
