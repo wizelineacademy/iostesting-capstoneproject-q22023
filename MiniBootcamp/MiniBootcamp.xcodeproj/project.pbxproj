@@ -11,6 +11,8 @@
 		23F052B12A15AE6400447E94 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052B02A15AE6400447E94 /* FeedViewModel.swift */; };
 		23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */; };
 		23F052EB2A20349300447E94 /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052EA2A20349300447E94 /* FeedDataManager.swift */; };
+		4CD440F62A25476100B3EEEF /* FeedDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD440F42A25476000B3EEEF /* FeedDataManagerTests.swift */; };
+		4CD440F72A25476100B3EEEF /* TweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD440F52A25476000B3EEEF /* TweetTests.swift */; };
 		95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95157E582A159EFE00B9C720 /* TweetCellTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
@@ -37,6 +39,8 @@
 		23F052B02A15AE6400447E94 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		23F052EA2A20349300447E94 /* FeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManager.swift; sourceTree = "<group>"; };
+		4CD440F42A25476000B3EEEF /* FeedDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataManagerTests.swift; sourceTree = "<group>"; };
+		4CD440F52A25476000B3EEEF /* TweetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTests.swift; sourceTree = "<group>"; };
 		95157E582A159EFE00B9C720 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CD440F12A25452D00B3EEEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		953697352A0C4A790083BD2C = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +101,7 @@
 		953697402A0C4A790083BD2C /* MiniBootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				4CD440F12A25452D00B3EEEF /* Models */,
 				9536974F2A0C4A7C0083BD2C /* Info.plist */,
 				953697412A0C4A790083BD2C /* AppDelegate.swift */,
 				95A1E2922A0C6B9500AB700E /* FeedViewController.swift */,
@@ -107,6 +119,8 @@
 		95A1E2882A0C696A00AB700E /* MiniBootcampTests */ = {
 			isa = PBXGroup;
 			children = (
+				4CD440F42A25476000B3EEEF /* FeedDataManagerTests.swift */,
+				4CD440F52A25476000B3EEEF /* TweetTests.swift */,
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
 				23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */,
@@ -239,7 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD440F72A25476100B3EEEF /* TweetTests.swift in Sources */,
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				4CD440F62A25476100B3EEEF /* FeedDataManagerTests.swift in Sources */,
 				23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */,
 				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);
