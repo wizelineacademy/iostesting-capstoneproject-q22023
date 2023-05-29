@@ -14,16 +14,16 @@ class FeedViewModel {
     
     
     var tweets: [TweetCellViewModel] = []
-
+    
     let observer: Observer<FetchState> = Observer<FetchState>()
     let dataManager: FeedDataManagerProtocol
     
     var bind: ((FetchState?) -> Void)? {
-           didSet {
-               observer.bind(bind)
-           }
-       }
-
+        didSet {
+            observer.bind(bind)
+        }
+    }
+    
     init(title: String = "TweetFeed", dataManager: FeedDataManagerProtocol = FeedDataManager()){
         self.title = title
         self.dataManager = dataManager
@@ -31,13 +31,22 @@ class FeedViewModel {
     
     func fetchTimeline() {
         dataManager.fetch { result in
-                switch result {
-                case .success(let tweetsReturned):
-                    self.tweets = tweetsReturned
-                    observer.updateValue(with: .success)
-                case .failure:
-                    observer.updateValue(with: .failure)
-                }
+            switch result {
+            case .success(let tweetsReturned):
+                self.tweets = tweetsReturned
+                observer.updateValue(with: .success)
+            case .failure:
+                observer.updateValue(with: .failure)
             }
-       }
+        }
+    }
+    
+    func getErrorAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Error", message: "🥺", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        return alert
+    }
 }
