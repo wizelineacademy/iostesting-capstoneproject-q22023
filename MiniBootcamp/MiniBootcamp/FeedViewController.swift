@@ -46,6 +46,7 @@ final class FeedViewController: UIViewController {
                 self.view.addSubview(loader)
             case .success:
                 self.loader.removeFromSuperview()
+                tableView.reloadData()
             case .failure:
                 self.loader.removeFromSuperview()
                 presentErrorAlert()
@@ -86,11 +87,13 @@ final class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        viewModel.tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier) as? TweetCell else { return UITableViewCell() }
+        
+        cell.viewModel = viewModel.tweets[indexPath.row]
         
         return cell
     }
