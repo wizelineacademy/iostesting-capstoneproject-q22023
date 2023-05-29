@@ -12,6 +12,8 @@
 		23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */; };
 		23F052EB2A20349300447E94 /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052EA2A20349300447E94 /* FeedDataManager.swift */; };
 		7AC737972A25090D0066D8C0 /* TweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC737962A25090D0066D8C0 /* TweetModel.swift */; };
+		7AC737992A250B630066D8C0 /* TweetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC737982A250B630066D8C0 /* TweetModelTests.swift */; };
+		7AC7379B2A250C390066D8C0 /* FeedDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7379A2A250C390066D8C0 /* FeedDataManagerTests.swift */; };
 		95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95157E582A159EFE00B9C720 /* TweetCellTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
@@ -39,6 +41,8 @@
 		23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		23F052EA2A20349300447E94 /* FeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManager.swift; sourceTree = "<group>"; };
 		7AC737962A25090D0066D8C0 /* TweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetModel.swift; sourceTree = "<group>"; };
+		7AC737982A250B630066D8C0 /* TweetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetModelTests.swift; sourceTree = "<group>"; };
+		7AC7379A2A250C390066D8C0 /* FeedDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManagerTests.swift; sourceTree = "<group>"; };
 		95157E582A159EFE00B9C720 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
 				23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */,
+				7AC737982A250B630066D8C0 /* TweetModelTests.swift */,
+				7AC7379A2A250C390066D8C0 /* FeedDataManagerTests.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -244,7 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				7AC737992A250B630066D8C0 /* TweetModelTests.swift in Sources */,
 				23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */,
+				7AC7379B2A250C390066D8C0 /* FeedDataManagerTests.swift in Sources */,
 				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
