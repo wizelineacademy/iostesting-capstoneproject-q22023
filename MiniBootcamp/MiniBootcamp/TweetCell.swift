@@ -125,14 +125,3 @@ final class TweetCell: UITableViewCell {
         userImageView.image = viewModel?.profilePicture
     }
 }
-
-struct TweetCellViewModel {
-    let userName: String
-    let profileName: String
-    let profilePictureName: String
-    let content: String
-    
-    var profilePicture: UIImage? {
-        return UIImage(named: profilePictureName)
-    }
-}
