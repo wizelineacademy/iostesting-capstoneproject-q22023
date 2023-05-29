@@ -9,8 +9,9 @@ import Foundation
 
 enum NetworkError: Error {
     case badRequest
-    case decodingError
     case badURL
+    case decodingError
+  
 }
 
 protocol FeedDataManagerProtocol {
@@ -19,9 +20,11 @@ protocol FeedDataManagerProtocol {
 
 
 class FeedDataManager: FeedDataManagerProtocol {
-//    func fetch(completion: (Result<[TweetCellViewModel], Error>) -> Void) {
-//        completion(.failure(NSError(domain: "", code: 0)))
-//    }
+    let session: URLSession
+    
+    init(session: URLSession = URLSession.shared) {
+            self.session = session
+        }
     
     func fetch(completion: @escaping (Result<[TweetCellViewModel], Error>) -> Void) {
         var listTweetCellViewModel : [TweetCellViewModel] = []
@@ -31,7 +34,13 @@ class FeedDataManager: FeedDataManagerProtocol {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        let request = URLRequest(url: url)
+        
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
             guard let data = data else {
                 completion(.failure(NetworkError.badRequest))
                 return
@@ -52,7 +61,7 @@ class FeedDataManager: FeedDataManagerProtocol {
                 print("Debug: error \(error.localizedDescription)")
                 completion(.failure(NetworkError.decodingError))
             }
-        }.resume()
-        
+        }
+        task.resume()
     }
 }
