@@ -42,7 +42,6 @@ final class FeedViewController: UIViewController {
         viewModel.observer.bind { [unowned self] state in
             switch state {
             case .loading:
-//                let loader = UIActivityIndicatorView(frame: view.bounds)
                 self.view.addSubview(loader)
             case .success:
                 self.loader.removeFromSuperview()
