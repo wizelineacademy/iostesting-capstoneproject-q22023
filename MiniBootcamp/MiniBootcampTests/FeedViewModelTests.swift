@@ -34,4 +34,12 @@ final class FeedViewModelTests: XCTestCase {
         sut.observer.updateValue(with: .loading)
         XCTAssertNil(sut.bind)
     }
+    
+    func test_observerUpdatesValue() {
+        let sut = FeedViewModel()
+        
+        sut.observer.updateValue(with: .loading)
+        
+        XCTAssertEqual(sut.observer.value, .loading)
+    }
 }

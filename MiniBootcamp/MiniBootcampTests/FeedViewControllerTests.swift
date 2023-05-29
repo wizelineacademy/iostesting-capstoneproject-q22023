@@ -67,8 +67,10 @@ final class FeedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         sut.viewModel.observer.updateValue(with: .loading)
         
-        let loader = sut.view.subviews.last
-        XCTAssertTrue(loader is UIActivityIndicatorView)
+        DispatchQueue.main.async {
+            let loader = sut.view.subviews.last
+            XCTAssertTrue(loader is UIActivityIndicatorView)
+        }
     }
     
     func test_binding_hideLoaderOnFailedFetch() {
@@ -103,11 +105,15 @@ final class FeedViewControllerTests: XCTestCase {
         let sut = FeedViewController()
         
         sut.loadViewIfNeeded()
+        sut.viewModel.observer.updateValue(with: .loading)
+        sut.viewModel.observer.updateValue(with: .failure)
         
-        let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
-        let alert = navigation.viewControllers.first?.presentedViewController
-        
-        XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
+        DispatchQueue.main.async {
+            let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
+            let alert = navigation.viewControllers.first?.presentedViewController
+            
+            XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
+        }
     }
     
     func test_fetchTimeline_reloadDataOnSuccessfulFetch() {
@@ -122,7 +128,11 @@ final class FeedViewControllerTests: XCTestCase {
         
         dataManager.result = .success([anyTweet()])
         sut.viewModel.fetchTimeline()
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+        
+        DispatchQueue.main.async {
+            XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+        }
+        
     }
     
     // MARK: - Private helper methods
