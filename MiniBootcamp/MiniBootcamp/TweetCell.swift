@@ -15,7 +15,7 @@ final class TweetCell: UITableViewCell {
 
     private(set) lazy var userImageView: UIImageView = {
         let imageView = UIImageView()
-
+        imageView.image = UIImage(named: "cat")
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
 

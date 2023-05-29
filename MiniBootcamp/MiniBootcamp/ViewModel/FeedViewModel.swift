@@ -33,10 +33,11 @@ class FeedViewModel {
         dataManager.fetch { result in
             switch result {
             case .success(let tweetsReturned):
+                print("tweetsReturned: \(tweetsReturned)")
                 self.tweets = tweetsReturned
-                observer.updateValue(with: .success)
+                self.observer.updateValue(with: .success)
             case .failure:
-                observer.updateValue(with: .failure)
+                self.observer.updateValue(with: .failure)
             }
         }
     }
