@@ -10,42 +10,40 @@ import XCTest
 
 final class FeedViewControllerTests: XCTestCase {
     
-    var sut: FeedViewController!
-    
-    override  func setUp() {
-        super.setUp()
-        
-        sut = FeedViewController()
+    func test_createFeedViewController() {
+        let sut = FeedViewController()
         
         sut.loadViewIfNeeded()
-    }
-    
-    override  func tearDown() {
-        super.tearDown()
-        sut = nil
-    }
-    
-    func test_createFeedViewController(){
+        
         XCTAssertEqual(sut.title, "TweetFeed")
         XCTAssertEqual(sut.view.backgroundColor, UIColor.white)
     }
     
     func test_createATableView() throws {
+        let sut = FeedViewController()
+        
+        sut.loadViewIfNeeded()
         
         let tableView = sut.tableView
-        let viewConstaintsTableView = try XCTUnwrap(sut.view.subviews.contains(tableView))
-        XCTAssert(viewConstaintsTableView)
+        let viewContainsTableView = try XCTUnwrap(sut.view?.subviews.contains(tableView))
+        XCTAssert(viewContainsTableView)
     }
     
     func test_setupTableView_delegates() {
+        let sut = FeedViewController()
+        
+        sut.loadViewIfNeeded()
         
         XCTAssert(sut.tableView.delegate is FeedViewController)
         XCTAssert(sut.tableView.dataSource is FeedViewController)
     }
     
     func test_createEmptyTableView_showNoCells() {
-        let tableView = sut.tableView
+        let sut = FeedViewController()
         
+        sut.loadViewIfNeeded()
+        
+        let tableView = sut.tableView
         XCTAssertEqual(0, tableView.numberOfRows(inSection: .zero))
     }
     
@@ -63,50 +61,43 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssert(cell is TweetCell)
     }
     
-    func test_cellForRowAt(){
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
+    func test_binding_showLoaderWhenFetchingTweets() {
+        let sut = FeedViewController()
         
-        XCTAssertNotNil(cell, "The cell should not be nil")
+        sut.loadViewIfNeeded()
+        sut.viewModel.observer.updateValue(with: .loading)
+        
+        let loader = sut.view.subviews.last
+        XCTAssertTrue(loader is UIActivityIndicatorView)
     }
     
-    func test_binding_showLoaderWhenFetchingTweets() {
-            let sut = FeedViewController()
-
-            sut.loadViewIfNeeded()
-        sut.viewModel.observer.updateValue(with: .loading)
-
-            let loader = sut.view.subviews.last
-            XCTAssertTrue(loader is UIActivityIndicatorView)
-        }
-    
     func test_binding_hideLoaderOnFailedFetch() {
-           // Given
-           let sut = FeedViewController()
-
-           // When
-           sut.loadViewIfNeeded()
+        // Given
+        let sut = FeedViewController()
+        
+        // When
+        sut.loadViewIfNeeded()
         sut.viewModel.observer.updateValue(with: .loading)
         sut.viewModel.observer.updateValue(with: .failure)
-
-           // Then
-           let loader = sut.view.subviews.last
-           XCTAssertFalse(loader is UIActivityIndicatorView)
-       }
+        
+        // Then
+        let loader = sut.view.subviews.last
+        XCTAssertFalse(loader is UIActivityIndicatorView)
+    }
     
     func test_binding_hideLoaderOnSuccessFetch() {
-           // Given
-           let sut = FeedViewController()
-
-           // When
-           sut.loadViewIfNeeded()
+        // Given
+        let sut = FeedViewController()
+        
+        // When
+        sut.loadViewIfNeeded()
         sut.viewModel.observer.updateValue(with: .loading)
         sut.viewModel.observer.updateValue(with: .success)
-
-           // Then
-           let loader = sut.view.subviews.last
-           XCTAssertFalse(loader is UIActivityIndicatorView)
-       }
+        
+        // Then
+        let loader = sut.view.subviews.last
+        XCTAssertFalse(loader is UIActivityIndicatorView)
+    }
     
     func test_fetchTimeline_showAlertOnFailedFetch() {
         let sut = FeedViewController()
@@ -134,10 +125,11 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
     }
     
+    // MARK: - Private helper methods
     private func anyTweet() -> TweetCellViewModel {
         TweetCellViewModel(userName: "any-name", profileName: "any-profile", profilePictureName: "cat", content: "any-content")
     }
-
+    
     private class FeedDataManagerSpy: FeedDataManagerProtocol {
         var result: Result<[TweetCellViewModel], Error> = .success([])
         

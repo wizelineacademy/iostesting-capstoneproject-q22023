@@ -16,21 +16,22 @@ final class FeedViewModelTests: XCTestCase {
         let exp = expectation(description: "Wait for bind")
         
         sut.observer.bind { state in
-            //Then
+            // Then
             XCTAssertEqual(state, .loading)
             exp.fulfill()
         }
         
-        //When
+        // When
         sut.observer.updateValue(with: .loading)
+        XCTAssertNotNil(sut.observer)
         
         wait(for: [exp], timeout: 1.0)
     }
     
     func test_setNilBindingToObserver_breaksConnection() {
-            let sut = FeedViewModel()
-
-            sut.observer.updateValue(with: .loading)
-            XCTAssertNil(sut.bind)
-        }
+        let sut = FeedViewModel()
+        
+        sut.observer.updateValue(with: .loading)
+        XCTAssertNil(sut.bind)
+    }
 }
