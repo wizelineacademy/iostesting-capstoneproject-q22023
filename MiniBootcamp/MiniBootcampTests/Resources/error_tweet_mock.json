@@ -1,0 +1,18 @@
+{
+	"created": "creation",
+    "id": "id",
+    "text": "This is an example",
+    "userInfo": {
+        "name": "Wizeboot",
+        "screen_name": "@wizeboot",
+        "description": "description",
+        "location": "location",
+        "followers_count": 100,
+        "created_at": "creation",
+        "profile_background_color": "red",
+        "profile_image_url": "url",
+        "profile_background_image_url": "url"
+    },
+    "favorite_count": 100,
+    "retweet_count": 10
+}

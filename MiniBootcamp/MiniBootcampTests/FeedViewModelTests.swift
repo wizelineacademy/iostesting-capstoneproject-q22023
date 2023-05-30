@@ -30,8 +30,21 @@ final class FeedViewModelTests: XCTestCase {
     
     func test_setNilBindingToObserver_breaksConnection() {
         let sut = FeedViewModel()
-        
         sut.observer.updateValue(with: .loading)
         XCTAssertNil(sut.bind)
     }
+    
+    
+    func test_parseTweets_CellSData() throws {
+        guard let path = Bundle(for: type(of: self)).path(forResource: "tweets_mock", ofType: "json") else { fatalError("Couldn't find json file") }
+        
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        let tweetJSON = try JSONDecoder().decode(Tweets.self, from: data)
+        
+        let sut = FeedViewModel()
+        let arr = sut.parseTweetCellsData(tweetJSON.tweets)
+        XCTAssertGreaterThan(arr.count, 0)
+        
+    }
+    
 }

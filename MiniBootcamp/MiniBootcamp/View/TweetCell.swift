@@ -13,7 +13,7 @@ final class TweetCell: UITableViewCell {
     static let identifier = "TweetCell"
     
     private(set) lazy var userImageView: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: UIImage(named: "avatar"))
         
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true

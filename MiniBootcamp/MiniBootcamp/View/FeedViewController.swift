@@ -39,20 +39,28 @@ final class FeedViewController: UIViewController {
         fetchTimeline()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private func binding() {
-        viewModel.bind = { [unowned self] state in
-            switch state {
-            case .loading:
-                self.view.addSubview(loader)
-            case .failure:
-                self.loader.removeFromSuperview()
-                present(viewModel.getErrorAlert(), animated: true)
-            case .success:
-                self.loader.removeFromSuperview()
-                tableView.reloadData()
-            default:
-                break
+        viewModel.bind = { [self] state in
+            
+            DispatchQueue.main.async {
+                switch state {
+                case .loading:
+                    self.view.addSubview(self.loader)
+                case .failure:
+                    self.loader.removeFromSuperview()
+                    self.present(self.viewModel.getErrorAlert(), animated: true)
+                case .success:
+                    self.loader.removeFromSuperview()
+                    self.tableView.reloadData()
+                default:
+                    break
+                }
             }
+            
         }
     }
     
@@ -82,6 +90,8 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier) as? TweetCell else { return UITableViewCell() }
         
+        print("indexPath.row: \(indexPath.row)")
+        print("viewModel.tweets: \(viewModel.tweets.count)")
         cell.viewModel = viewModel.tweets[indexPath.row]
         
         return cell
