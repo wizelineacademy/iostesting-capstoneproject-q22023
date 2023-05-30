@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007DAA432A2263F00000390C /* FeedDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DAA422A2263F00000390C /* FeedDataManagerTests.swift */; };
+		007DAA472A2660550000390C /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DAA462A2660550000390C /* FakeSession.swift */; };
+		007DAA492A2660550000390C /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DAA482A2660550000390C /* DummyData.swift */; };
+		007DAA4B2A2660550000390C /* MockDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DAA4A2A2660550000390C /* MockDataTask.swift */; };
+		00DDA5082A24FF8A00DEF4CF /* TweetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA5072A24FF8A00DEF4CF /* TweetResponse.swift */; };
 		23F052AF2A15A62200447E94 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052AE2A15A62200447E94 /* Observer.swift */; };
 		23F052B12A15AE6400447E94 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052B02A15AE6400447E94 /* FeedViewModel.swift */; };
 		23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007DAA422A2263F00000390C /* FeedDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManagerTests.swift; sourceTree = "<group>"; };
+		007DAA462A2660550000390C /* FakeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSession.swift; sourceTree = "<group>"; };
+		007DAA482A2660550000390C /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		007DAA4A2A2660550000390C /* MockDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataTask.swift; sourceTree = "<group>"; };
+		00DDA5072A24FF8A00DEF4CF /* TweetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetResponse.swift; sourceTree = "<group>"; };
 		23F052AE2A15A62200447E94 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		23F052B02A15AE6400447E94 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 				95A8EFE82A157F25002423F3 /* Utilities */,
 				23F052B02A15AE6400447E94 /* FeedViewModel.swift */,
 				23F052EA2A20349300447E94 /* FeedDataManager.swift */,
+				00DDA5072A24FF8A00DEF4CF /* TweetResponse.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -110,6 +121,10 @@
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
 				23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */,
+				007DAA422A2263F00000390C /* FeedDataManagerTests.swift */,
+				007DAA462A2660550000390C /* FakeSession.swift */,
+				007DAA482A2660550000390C /* DummyData.swift */,
+				007DAA4A2A2660550000390C /* MockDataTask.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
 				23F052AF2A15A62200447E94 /* Observer.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
+				00DDA5082A24FF8A00DEF4CF /* TweetResponse.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
 				95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */,
 				95A8EFE72A157EB7002423F3 /* TweetCell.swift in Sources */,
@@ -239,7 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007DAA492A2660550000390C /* DummyData.swift in Sources */,
+				007DAA4B2A2660550000390C /* MockDataTask.swift in Sources */,
+				007DAA472A2660550000390C /* FakeSession.swift in Sources */,
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				007DAA432A2263F00000390C /* FeedDataManagerTests.swift in Sources */,
 				23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */,
 				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);

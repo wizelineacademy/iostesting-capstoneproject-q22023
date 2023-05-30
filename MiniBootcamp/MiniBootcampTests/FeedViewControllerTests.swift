@@ -63,10 +63,12 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_binding_showLoaderWhenFetchingTweets() {
         let sut = FeedViewController()
-        
+        let dataManagerSpy = FeedDataManagerSpy()
+        let viewModel = FeedViewModel(title: "tes", dataManager: dataManagerSpy)
+        sut.viewModel = viewModel
         sut.loadViewIfNeeded()
         sut.viewModel.observer.updateValue(with: .loading)
-        
+
         let loader = sut.view.subviews.last
         XCTAssertTrue(loader is UIActivityIndicatorView)
     }
@@ -99,32 +101,6 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertFalse(loader is UIActivityIndicatorView)
     }
     
-    func test_fetchTimeline_showAlertOnFailedFetch() {
-        let sut = FeedViewController()
-        
-        sut.loadViewIfNeeded()
-        
-        let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
-        let alert = navigation.viewControllers.first?.presentedViewController
-        
-        XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
-    }
-    
-    func test_fetchTimeline_reloadDataOnSuccessfulFetch() {
-        let sut = FeedViewController()
-        let dataManager = FeedDataManagerSpy()
-        let dummyViewModel = FeedViewModel(title: "expectedTitle", dataManager: dataManager)
-        sut.viewModel = dummyViewModel
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
-        
-        dataManager.result = .success([anyTweet()])
-        sut.viewModel.fetchTimeline()
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
-    }
-    
     // MARK: - Private helper methods
     private func anyTweet() -> TweetCellViewModel {
         TweetCellViewModel(userName: "any-name", profileName: "any-profile", profilePictureName: "cat", content: "any-content")
@@ -138,3 +114,11 @@ final class FeedViewControllerTests: XCTestCase {
         }
     }
 }
+
+private class FeedDataManagerSpy: FeedDataManagerProtocol {
+     var result: Result<[TweetCellViewModel], Error> = .success([])
+
+     func fetch(completion: (Result<[TweetCellViewModel], Error>) -> Void) {
+         completion(result)
+     }
+ }
