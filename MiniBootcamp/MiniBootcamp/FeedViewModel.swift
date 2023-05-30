@@ -27,19 +27,19 @@ class FeedViewModel {
         self.dataManager = dataManager
     }
     func fetchTimeline() {
-        dataManager.fetch { result in
+        dataManager.fetch { [weak self] result in
             switch result {
             case .success(let tweetsReturned):
-                self.tweets = tweetsReturned
-                observer.updateValue(with: .success)
+                self?.tweets = tweetsReturned
+                self?.observer.updateValue(with: .success)
             case .failure:
-                observer.updateValue(with: .failure)
+                self?.observer.updateValue(with: .failure)
             }
         }
     }
     
     func getErrorAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Error", message: "🥺", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "🫥", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .cancel)
         
         alert.addAction(okAction)
