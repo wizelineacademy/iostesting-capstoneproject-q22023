@@ -120,8 +120,8 @@ final class TweetCell: UITableViewCell {
     
     private func configureInformation() {
         contentLabel.text = viewModel?.content
-        nameLabel.text = viewModel?.user.userName
-        usernameLabel.text = viewModel?.user.profileName
+        nameLabel.text = viewModel?.user.profileName
+        usernameLabel.text = viewModel?.user.userName
         userImageView.image = viewModel?.profilePicture
     }
 }
