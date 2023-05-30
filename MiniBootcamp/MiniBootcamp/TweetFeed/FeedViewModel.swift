@@ -31,9 +31,9 @@ class FeedViewModel {
             switch result {
             case .success(let tweetsReturned):
                 self.tweets = tweetsReturned
-                observer.updateValue(with: .success)
+                self.observer.updateValue(with: .success)
             case .failure:
-                observer.updateValue(with: .failure)
+                self.observer.updateValue(with: .failure)
             }
         }
     }
