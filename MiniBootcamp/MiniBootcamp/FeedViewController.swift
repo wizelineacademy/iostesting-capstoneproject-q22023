@@ -36,21 +36,28 @@ final class FeedViewController: UIViewController {
         view.backgroundColor = viewModel.backgroundColor
         setupTableView()
         binding()
+        fetchTimeline()
     }
     
     private func binding() {
-        viewModel.observer.bind { [unowned self] state in
+        viewModel.bind = { [unowned self] state in
             switch state {
             case .loading:
                 self.view.addSubview(loader)
             case .failure:
                 self.loader.removeFromSuperview()
+                present(viewModel.getErrorAlert(), animated: true)
             case .success:
                 self.loader.removeFromSuperview()
+                tableView.reloadData()
             default:
                 break
             }
         }
+    }
+    
+    private func fetchTimeline() {
+        viewModel.fetchTimeline()
     }
     
     private func setupTableView() {
@@ -69,12 +76,13 @@ final class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier) as? TweetCell else { return UITableViewCell() }
         
+        cell.viewModel = viewModel.tweets[indexPath.row]
         
         return cell
     }

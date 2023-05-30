@@ -38,17 +38,21 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssert(sut.tableView.dataSource is FeedViewController)
     }
     
-    func test_tableView_numberOfRows() {
+    func test_createEmptyTableView_showNoCells() {
         let sut = FeedViewController()
         
         sut.loadViewIfNeeded()
         
         let tableView = sut.tableView
-        XCTAssertEqual(1, tableView.numberOfRows(inSection: .zero))
+        XCTAssertEqual(0, tableView.numberOfRows(inSection: .zero))
     }
     
     func test_tableView_createsTweetCells() throws {
         let sut = FeedViewController()
+        let dataManager = FeedDataManagerSpy()
+        let dummyViewModel = FeedViewModel(title: "expectedTitle", dataManager: dataManager)
+        sut.viewModel = dummyViewModel
+        dataManager.result = .success([anyTweet()])
         
         sut.loadViewIfNeeded()
         let indexPath = IndexPath(row: 0, section: 0)
@@ -93,5 +97,44 @@ final class FeedViewControllerTests: XCTestCase {
         // Then
         let loader = sut.view.subviews.last
         XCTAssertFalse(loader is UIActivityIndicatorView)
+    }
+    
+    func test_fetchTimeline_showAlertOnFailedFetch() {
+        let sut = FeedViewController()
+        
+        sut.loadViewIfNeeded()
+        
+        let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
+        let alert = navigation.viewControllers.first?.presentedViewController
+        
+        XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
+    }
+    
+    func test_fetchTimeline_reloadDataOnSuccessfulFetch() {
+        let sut = FeedViewController()
+        let dataManager = FeedDataManagerSpy()
+        let dummyViewModel = FeedViewModel(title: "expectedTitle", dataManager: dataManager)
+        sut.viewModel = dummyViewModel
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+        
+        dataManager.result = .success([anyTweet()])
+        sut.viewModel.fetchTimeline()
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+    }
+    
+    // MARK: - Private helper methods
+    private func anyTweet() -> TweetCellViewModel {
+        TweetCellViewModel(userName: "any-name", profileName: "any-profile", profilePictureName: "cat", content: "any-content")
+    }
+    
+    private class FeedDataManagerSpy: FeedDataManagerProtocol {
+        var result: Result<[TweetCellViewModel], Error> = .success([])
+        
+        func fetch(completion: (Result<[TweetCellViewModel], Error>) -> Void) {
+            completion(result)
+        }
     }
 }

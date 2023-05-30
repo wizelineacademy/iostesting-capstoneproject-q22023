@@ -11,9 +11,39 @@ class FeedViewModel {
     let title: String
     var backgroundColor: UIColor? = .white
     
-    let observer: Observer<FetchState> = Observer<FetchState>()
+    var tweets: [TweetCellViewModel] = []
     
-    init(title: String = "TweetFeed") {
+    let observer: Observer<FetchState> = Observer<FetchState>()
+    let dataManager: FeedDataManagerProtocol
+    
+    var bind: ((FetchState?) -> Void)? {
+        didSet {
+            observer.bind(bind)
+        }
+    }
+    
+    init(title: String = "TweetFeed", dataManager: FeedDataManagerProtocol = FeedDataManager()) {
         self.title = title
+        self.dataManager = dataManager
+    }
+    func fetchTimeline() {
+        dataManager.fetch { result in
+            switch result {
+            case .success(let tweetsReturned):
+                self.tweets = tweetsReturned
+                observer.updateValue(with: .success)
+            case .failure:
+                observer.updateValue(with: .failure)
+            }
+        }
+    }
+    
+    func getErrorAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Error", message: "🥺", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        return alert
     }
 }

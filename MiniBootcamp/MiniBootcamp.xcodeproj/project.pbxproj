@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23F052AF2A15A62200447E94 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052AE2A15A62200447E94 /* Observer.swift */; };
 		23F052B12A15AE6400447E94 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052B02A15AE6400447E94 /* FeedViewModel.swift */; };
+		23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */; };
+		23F052EB2A20349300447E94 /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F052EA2A20349300447E94 /* FeedDataManager.swift */; };
 		95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95157E582A159EFE00B9C720 /* TweetCellTests.swift */; };
 		953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697412A0C4A790083BD2C /* AppDelegate.swift */; };
 		953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953697432A0C4A790083BD2C /* SceneDelegate.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		23F052AE2A15A62200447E94 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		23F052B02A15AE6400447E94 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		23F052EA2A20349300447E94 /* FeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManager.swift; sourceTree = "<group>"; };
 		95157E582A159EFE00B9C720 /* TweetCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTests.swift; sourceTree = "<group>"; };
 		9536973E2A0C4A790083BD2C /* MiniBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953697412A0C4A790083BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
 				95A8EFE82A157F25002423F3 /* Utilities */,
 				23F052B02A15AE6400447E94 /* FeedViewModel.swift */,
+				23F052EA2A20349300447E94 /* FeedDataManager.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			children = (
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
+				23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F052B12A15AE6400447E94 /* FeedViewModel.swift in Sources */,
+				23F052EB2A20349300447E94 /* FeedDataManager.swift in Sources */,
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
 				23F052AF2A15A62200447E94 /* Observer.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
@@ -233,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */,
 				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
