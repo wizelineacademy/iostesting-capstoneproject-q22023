@@ -125,9 +125,18 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
     }
     
+    
     // MARK: - Private helper methods
+    
     private func anyTweet() -> TweetCellViewModel {
-        TweetCellViewModel(userName: "any-name", profileName: "any-profile", profilePictureName: "cat", content: "any-content")
+        TweetCellViewModel(
+            user: TweetCellViewModel.UserInfo(
+                userName: "dummy-username",
+                profileName: "dummy-profileName",
+                profilePictureName: "cat"
+            ),
+            content: "dummy-content"
+        )
     }
     
     private class FeedDataManagerSpy: FeedDataManagerProtocol {
@@ -137,4 +146,5 @@ final class FeedViewControllerTests: XCTestCase {
             completion(result)
         }
     }
+    
 }
