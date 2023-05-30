@@ -100,14 +100,27 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     func test_fetchTimeline_showAlertOnFailedFetch() {
+        // Given
         let sut = FeedViewController()
+        let dataManager = FeedDataManagerSpy()
+        let dummyViewModel = FeedViewModel(title: "expectedTitle", dataManager: dataManager)
+        sut.viewModel = dummyViewModel
+        dataManager.result = .failure(NSError(domain: "", code: 0))
         
+        // When
         sut.loadViewIfNeeded()
+        let expectation = XCTestExpectation(description: "Observer update")
+        sut.viewModel.bind = { state in
+            if state == .failure {
+                expectation.fulfill()
+            }
+        }
+        sut.viewModel.fetchTimeline()
+        wait(for: [expectation], timeout: 1.0)
         
-        let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
-        let alert = navigation.viewControllers.first?.presentedViewController
-        
-        XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
+        // Then
+        let alertController = sut.viewModel.getErrorAlert()
+        XCTAssertNotNil(alertController, "Expected a UIAlertController to be created.")
     }
     
     func test_fetchTimeline_reloadDataOnSuccessfulFetch() {

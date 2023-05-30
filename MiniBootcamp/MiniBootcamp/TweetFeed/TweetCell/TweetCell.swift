@@ -15,6 +15,7 @@ final class TweetCell: UITableViewCell {
     private(set) lazy var userImageView: UIImageView = {
         let imageView = UIImageView()
         
+        imageView.image = UIImage(named: "cat")
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         
@@ -126,13 +127,4 @@ final class TweetCell: UITableViewCell {
     }
 }
 
-struct TweetCellViewModel {
-    let userName: String
-    let profileName: String
-    let profilePictureName: String
-    let content: String
-    
-    var profilePicture: UIImage? {
-        return UIImage(named: profilePictureName)
-    }
-}
+
