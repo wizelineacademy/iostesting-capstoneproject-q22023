@@ -9,6 +9,7 @@ import UIKit
 
 enum APIError: Error {
     case badURL
+    case badRequest
     case badJSON
 }
 
@@ -23,8 +24,10 @@ class FeedDataManager: FeedDataManagerProtocol {
     func fetch(completion: @escaping (Result<[TweetCellViewModel], Error>) -> Void) {
         do {
             let url = try validateURL(from: FeedDataManager.url)
-            URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
-                guard let self = self, let data = data else { return }
+            URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+                guard let self = self,
+                      self.isValidResponse(error: error, response: response),
+                      let data = data else { return }
                 do {
                     let tweets = try self.decodeTweetCells(from: data)
                     completion(.success(tweets))
@@ -41,9 +44,15 @@ class FeedDataManager: FeedDataManagerProtocol {
     func validateURL(from string: String) throws -> URL {
         if let url = URL(string: string), UIApplication.shared.canOpenURL(url) {
             return url
-        } else {
-            throw APIError.badURL
         }
+        throw APIError.badURL
+    }
+    
+    func isValidResponse(error: Error?, response: URLResponse?) -> Bool {
+        guard error == nil,let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            return false
+        }
+        return true
     }
     
     func decodeTweetCells(from data: Data) throws -> [TweetCellViewModel] {

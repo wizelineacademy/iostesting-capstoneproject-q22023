@@ -23,9 +23,27 @@ final class FeedDataManagerTests: XCTestCase {
     func test_dataManager_getURL_fromGoodURL() {
         let sut = FeedDataManager()
         
-        let url = try? sut.validateURL(from: "https://gist.githubusercontent.com/ferdelarosa-wz/0c73ab5311c845fb7dfac4b62ab6c652/raw/6a39cffe68d87f1613f222372c62bd4e89ad06fa/tweets.json")
+        let url = try? sut.validateURL(from: FeedDataManager.url)
         
         XCTAssertTrue(url != nil)
+    }
+    
+    func test_requestHasError() {
+        let sut = FeedDataManager()
+        
+        let error = NSError(domain: "", code: 1)
+        
+        XCTAssertFalse(sut.isValidResponse(error: error, response: nil))
+    }
+    
+    func test_requestHasNoError() {
+        let sut = FeedDataManager()
+        
+        guard let url = try? sut.validateURL(from: FeedDataManager.url) else { return }
+        
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        XCTAssertTrue(sut.isValidResponse(error: nil, response: response))
     }
     
     func test_dataManager_throwError_fromBadJSON() {
