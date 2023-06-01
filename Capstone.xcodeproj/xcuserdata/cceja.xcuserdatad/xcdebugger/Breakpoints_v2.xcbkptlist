@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5D9D3BDF-7613-447E-A158-869345B1C40B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85E577B5-5C4A-483E-884A-C6D91ADA4689"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CapstoneTests/FeedViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "test_fetchTimeline_showAlertOnFailedFetch()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "85E577B5-5C4A-483E-884A-C6D91ADA4689 - 743453545e38f743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CapstoneTests.FeedViewControllerTests.test_fetchTimeline_showAlertOnFailedFetch() -&gt; ()"
+                  moduleName = "CapstoneTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cceja/git-repos/Personal/Capstone/CapstoneTests/FeedViewControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1380">
+               </Location>
+               <Location
+                  uuid = "85E577B5-5C4A-483E-884A-C6D91ADA4689 - 743453545e38f743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CapstoneTests.FeedViewControllerTests.test_fetchTimeline_showAlertOnFailedFetch() -&gt; ()"
+                  moduleName = "CapstoneTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cceja/git-repos/Personal/Capstone/CapstoneTests/FeedViewControllerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1624">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "984E6DAE-52C8-47D6-8588-D110A546406B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CapstoneTests/FeedViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "test_fetchTimeline_showAlertOnFailedFetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
