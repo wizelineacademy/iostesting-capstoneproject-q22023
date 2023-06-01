@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8E5E3C86-A425-4566-AF7A-CF3E5BB4D17A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Capstone.xcodeproj",
+        "identifier" : "D6C8A7F02A24B73F00F0CED6",
+        "name" : "CapstoneTests"
+      }
+    }
+  ],
+  "version" : 1
+}
