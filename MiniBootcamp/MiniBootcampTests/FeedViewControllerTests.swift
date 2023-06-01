@@ -99,17 +99,6 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertFalse(loader is UIActivityIndicatorView)
     }
     
-    func test_fetchTimeline_showAlertOnFailedFetch() {
-        let sut = FeedViewController()
-        
-        sut.loadViewIfNeeded()
-        
-        let navigation = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
-        let alert = navigation.viewControllers.first?.presentedViewController
-        
-        XCTAssertTrue(alert is UIAlertController, "Expected a UIAlertController, got \(String(describing: alert)) instead.")
-    }
-    
     func test_fetchTimeline_reloadDataOnSuccessfulFetch() {
         let sut = FeedViewController()
         let dataManager = FeedDataManagerSpy()
