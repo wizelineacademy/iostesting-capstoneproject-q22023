@@ -20,6 +20,9 @@
 		95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E2922A0C6B9500AB700E /* FeedViewController.swift */; };
 		95A8EFE72A157EB7002423F3 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8EFE62A157EB7002423F3 /* TweetCell.swift */; };
 		95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */; };
+		A915ED9C2A2455C100C793FA /* FeedDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915ED9B2A2455C100C793FA /* FeedDataManagerTests.swift */; };
+		A990C8102A252C5E0020A286 /* TweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990C80F2A252C5E0020A286 /* TweetModel.swift */; };
+		A990C8122A252CCF0020A286 /* TweetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990C8112A252CCF0020A286 /* TweetModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		95A1E2922A0C6B9500AB700E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		95A8EFE62A157EB7002423F3 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		A915ED9B2A2455C100C793FA /* FeedDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManagerTests.swift; sourceTree = "<group>"; };
+		A990C80F2A252C5E0020A286 /* TweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetModel.swift; sourceTree = "<group>"; };
+		A990C8112A252CCF0020A286 /* TweetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				95A8EFE82A157F25002423F3 /* Utilities */,
 				23F052B02A15AE6400447E94 /* FeedViewModel.swift */,
 				23F052EA2A20349300447E94 /* FeedDataManager.swift */,
+				A990C80F2A252C5E0020A286 /* TweetModel.swift */,
 			);
 			path = MiniBootcamp;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 				95A1E2902A0C6AA800AB700E /* FeedViewControllerTests.swift */,
 				95157E582A159EFE00B9C720 /* TweetCellTests.swift */,
 				23F052E82A202B2E00447E94 /* FeedViewModelTests.swift */,
+				A915ED9B2A2455C100C793FA /* FeedDataManagerTests.swift */,
+				A990C8112A252CCF0020A286 /* TweetModelTests.swift */,
 			);
 			path = MiniBootcampTests;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 				23F052AF2A15A62200447E94 /* Observer.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,
+				A990C8102A252C5E0020A286 /* TweetModel.swift in Sources */,
 				95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */,
 				95A8EFE72A157EB7002423F3 /* TweetCell.swift in Sources */,
 			);
@@ -240,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A1E2912A0C6AA800AB700E /* FeedViewControllerTests.swift in Sources */,
+				A990C8122A252CCF0020A286 /* TweetModelTests.swift in Sources */,
+				A915ED9C2A2455C100C793FA /* FeedDataManagerTests.swift in Sources */,
 				23F052E92A202B2E00447E94 /* FeedViewModelTests.swift in Sources */,
 				95157E592A159EFE00B9C720 /* TweetCellTests.swift in Sources */,
 			);

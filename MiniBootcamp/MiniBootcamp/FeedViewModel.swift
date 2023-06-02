@@ -27,13 +27,14 @@ class FeedViewModel {
         self.dataManager = dataManager
     }
     func fetchTimeline() {
-        dataManager.fetch { result in
+        dataManager.fetch { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case .success(let tweetsReturned):
-                self.tweets = tweetsReturned
-                observer.updateValue(with: .success)
-            case .failure:
-                observer.updateValue(with: .failure)
+            case .success(let tweets):
+                self.tweets = tweets
+                self.observer.updateValue(with: .success)
+            case .failure(_):
+                self.observer.updateValue(with: .failure)
             }
         }
     }
