@@ -84,7 +84,7 @@ final class FeedViewControllerTests: XCTestCase {
         let viewModelMock = FeedViewModelMock(title: "expectedTitle", dataManager: dataManager)
         let exp = expectation(description: "Wait for completion")
         sut.viewModel = viewModelMock
-        dataManager.result = .failure(NSError(domain: "any-error", code: 0))
+        dataManager.result = .failure(.badResponse)
         dataManager.exp = exp
         
         // When
@@ -121,7 +121,7 @@ final class FeedViewControllerTests: XCTestCase {
         let viewModelMock = FeedViewModelMock(title: "expectedTitle", dataManager: dataManager)
         let exp = expectation(description: "Wait for completion")
         sut.viewModel = viewModelMock
-        dataManager.result = .failure(NSError(domain: "any-error", code: 0))
+        dataManager.result = .failure(.badResponse)
         dataManager.exp = exp
         
         sut.loadViewIfNeeded()

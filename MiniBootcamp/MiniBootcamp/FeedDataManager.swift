@@ -7,12 +7,22 @@
 
 import Foundation
 
-protocol FeedDataManagerProtocol {
-    func fetch(completion: @escaping (Result<[TweetCellViewModel], Error>) -> Void)
+enum FeedError: Error {
+    case badURL
+    case badResponse
 }
 
-class FeedDataManager: FeedDataManagerProtocol {
-    func fetch(completion: @escaping (Result<[TweetCellViewModel], Error>) -> Void) {
-        completion(.failure(NSError(domain: "", code: 0)))
+protocol FeedDataManagerProtocol {
+    func fetch(from urlString: String, completion: @escaping (Result<[TweetCellViewModel], FeedError>) -> Void)
+}
+
+final class FeedDataManager: FeedDataManagerProtocol {
+    func fetch(from urlString: String, completion: @escaping (Result<[TweetCellViewModel], FeedError>) -> Void) {
+        guard let _ = URL(string: urlString) else {
+            completion(.failure(.badURL))
+            return
+        }
+
+        completion(.failure(.badResponse))
     }
 }
