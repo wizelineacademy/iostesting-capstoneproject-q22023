@@ -9,32 +9,29 @@ import Foundation
 
 protocol Observable {
     associatedtype ObservedObject
-    typealias Subscriber = (ObservedObject?) -> ()
-    var value: ObservedObject? { get }
+    typealias Subscriber = (ObservedObject) -> ()
+    var value: ObservedObject! { get }
     var subscriber: Subscriber? { get }
     
-    func updateValue(with newValue: ObservedObject?)
+    func updateValue(with newValue: ObservedObject)
     func bind(_ subscriber: Subscriber?)
 }
 
 class Observer<T>: Observable {
     typealias ObservedObject = T
-    
-    private var _value: ObservedObject?
+
     private(set) var subscriber: Subscriber?
     
-    private(set) var value: ObservedObject? {
-        get { _value }
-        set {
-            _value = newValue
-            subscriber?(newValue)
+    private(set) var value: ObservedObject! {
+        didSet {
+            subscriber?(value)
         }
     }
-    
-    func updateValue(with newValue: T?) {
+
+    func updateValue(with newValue: ObservedObject) {
         self.value = newValue
     }
-    
+
     func bind(_ subscriber: Subscriber?) {
         self.subscriber = subscriber
     }

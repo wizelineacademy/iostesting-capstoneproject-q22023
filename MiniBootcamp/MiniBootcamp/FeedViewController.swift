@@ -16,7 +16,7 @@ enum FetchState {
 final class FeedViewController: UIViewController {
     
     private(set) lazy var tableView: UITableView = {
-       let tableView =  UITableView()
+        let tableView =  UITableView()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,15 +43,16 @@ final class FeedViewController: UIViewController {
         viewModel.bind = { [unowned self] state in
             switch state {
             case .loading:
-                self.view.addSubview(loader)
+                self.view.addSubview(self.loader)
+                self.loader.startAnimating()
             case .failure:
+                self.loader.stopAnimating()
                 self.loader.removeFromSuperview()
-                present(viewModel.getErrorAlert(), animated: true)
+                self.present(self.viewModel.getErrorAlert(), animated: true)
             case .success:
+                self.loader.stopAnimating()
                 self.loader.removeFromSuperview()
-                tableView.reloadData()
-            default:
-                break
+                self.tableView.reloadData()
             }
         }
     }

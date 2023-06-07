@@ -32,4 +32,15 @@ final class FeedViewModelTests: XCTestCase {
         sut.fetchTimeline()
         XCTAssertNil(sut.bind)
     }
+    
+    func test_getErrorAlert_createsErrorAlert() {
+        let sut = FeedViewModel()
+        
+        let alert = sut.getErrorAlert()
+        
+        XCTAssertEqual(alert.title, "Error")
+        XCTAssertEqual(alert.message, "🥺")
+        XCTAssertEqual(alert.actions.first?.title, "Ok")
+        XCTAssertEqual(alert.actions.first?.style, .cancel)
+    }
 }

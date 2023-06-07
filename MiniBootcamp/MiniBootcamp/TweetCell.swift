@@ -8,7 +8,6 @@
 import UIKit
 
 final class TweetCell: UITableViewCell {
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     static let identifier = "TweetCell"
     
@@ -49,11 +48,6 @@ final class TweetCell: UITableViewCell {
         
         return label
     }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
     
     // MARK: - Layout
     private func setup() {
@@ -114,6 +108,7 @@ final class TweetCell: UITableViewCell {
     
     var viewModel: TweetCellViewModel? {
         didSet {
+            setup()
             configureInformation()
         }
     }
@@ -133,6 +128,6 @@ struct TweetCellViewModel {
     let content: String
     
     var profilePicture: UIImage? {
-        return UIImage(named: profilePictureName)
+        return UIImage(named: "cat")
     }
 }

@@ -17,7 +17,7 @@ class FeedViewModel {
     private let observer: Observer<FetchState> = Observer<FetchState>()
     private var dataManager: FeedDataManagerProtocol?
     
-    var bind: ((FetchState?) -> Void)? {
+    var bind: ((FetchState) -> Void)? {
         didSet {
             observer.bind(bind)
         }

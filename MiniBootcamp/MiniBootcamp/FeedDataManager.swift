@@ -36,10 +36,12 @@ final class FeedDataManager: FeedDataManagerProtocol {
         
         let request = URLRequest(url: url)
         let _ = session.task(with: request) { [unowned self] data, _, _ in
-            if let data = data {
-                completion(self.parseToTweets(from: data))
-            } else {
-                completion(.failure(.badResponse))
+            DispatchQueue.main.async {
+                if let data = data {
+                    completion(self.parseToTweets(from: data))
+                } else {
+                    completion(.failure(.badResponse))
+                }
             }
         }?.resume()
     }
