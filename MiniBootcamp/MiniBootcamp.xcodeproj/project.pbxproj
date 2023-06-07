@@ -22,6 +22,7 @@
 		95A8EFEA2A157F4C002423F3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */; };
 		95BF90E92A311E0100EB3549 /* FeedDataManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF90E82A311E0100EB3549 /* FeedDataManagerSpy.swift */; };
 		95BF90EB2A31227600EB3549 /* FeedDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF90EA2A31227600EB3549 /* FeedDataManagerTests.swift */; };
+		95BF90ED2A31258B00EB3549 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF90EC2A31258B00EB3549 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		95A8EFE92A157F4C002423F3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		95BF90E82A311E0100EB3549 /* FeedDataManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManagerSpy.swift; sourceTree = "<group>"; };
 		95BF90EA2A31227600EB3549 /* FeedDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManagerTests.swift; sourceTree = "<group>"; };
+		95BF90EC2A31258B00EB3549 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				95A1E2922A0C6B9500AB700E /* FeedViewController.swift */,
 				23F052B02A15AE6400447E94 /* FeedViewModel.swift */,
 				953697432A0C4A790083BD2C /* SceneDelegate.swift */,
+				95BF90EC2A31258B00EB3549 /* Tweet.swift */,
 				95A8EFE62A157EB7002423F3 /* TweetCell.swift */,
 				9536974A2A0C4A7C0083BD2C /* Assets.xcassets */,
 				9536974C2A0C4A7C0083BD2C /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				23F052B12A15AE6400447E94 /* FeedViewModel.swift in Sources */,
 				23F052EB2A20349300447E94 /* FeedDataManager.swift in Sources */,
 				953697422A0C4A790083BD2C /* AppDelegate.swift in Sources */,
+				95BF90ED2A31258B00EB3549 /* Tweet.swift in Sources */,
 				23F052AF2A15A62200447E94 /* Observer.swift in Sources */,
 				95A1E2932A0C6B9500AB700E /* FeedViewController.swift in Sources */,
 				953697442A0C4A790083BD2C /* SceneDelegate.swift in Sources */,

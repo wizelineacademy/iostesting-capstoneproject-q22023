@@ -12,7 +12,7 @@ final class FeedDataManagerTests: XCTestCase {
     
     func test_fetchingData_returnsAnyError() {
         let session = URLSessionSpy()
-        session.error = NSError(domain: "any-erro", code: 0)
+        session.error = NSError(domain: "any-error", code: 0)
         let sut = FeedDataManager(session: session)
         let anyURL = "https://gist.githubusercontent.com"
         let exp = expectation(description: "Fetching data...")
@@ -51,7 +51,7 @@ final class FeedDataManagerTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    func test_fetchingData_returnsTweets() {
+    func test_dataManager_returnsBadJsonError_onAnyData() {
         let session = URLSessionSpy()
         session.data = Data()
         let sut = FeedDataManager(session: session)
@@ -63,6 +63,29 @@ final class FeedDataManagerTests: XCTestCase {
             switch result {
             case .success:
                 break
+            case let .failure(error):
+                XCTAssertEqual(error, .badJSON)
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_dataManager_willParseTweetFromValidData() {
+        let session = URLSessionSpy()
+        session.data = fakeResponse()
+        let sut = FeedDataManager(session: session)
+        
+        let urlString = "any-valid-url"
+        let exp = expectation(description: "Fetching data...")
+        
+        sut.fetch(from: urlString) { result in
+            switch result {
+            case let .success(tweets):
+                XCTAssertEqual(tweets.count, 1)
+                XCTAssertEqual(tweets.first?.profileName, "@wizeboot")
             default:
                 XCTFail("Expected tweets instead of: \(result)")
             }
@@ -71,6 +94,23 @@ final class FeedDataManagerTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    private func fakeResponse() -> Data {
+        return """
+            {
+                "tweets": [
+                    {
+                        "text": "This is an example",
+                        "user": {
+                            "name": "Wizeboot",
+                            "screen_name": "@wizeboot",
+                            "profile_image_url": "url"
+                        }
+                    }
+                ]
+            }
+            """.data(using: .utf8)!
     }
 }
 

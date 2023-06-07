@@ -9,6 +9,7 @@ import Foundation
 
 enum FeedError: Error {
     case badURL
+    case badJSON
     case badResponse
 }
 
@@ -34,12 +35,22 @@ final class FeedDataManager: FeedDataManagerProtocol {
         }
         
         let request = URLRequest(url: url)
-        let _ = session.task(with: request) { data, _, _ in
-            if let _ = data {
-                completion(.success([]))
+        let _ = session.task(with: request) { [unowned self] data, _, _ in
+            if let data = data {
+                completion(self.parseToTweets(from: data))
             } else {
                 completion(.failure(.badResponse))
             }
+        }?.resume()
+    }
+    
+    private func parseToTweets(from data: Data) -> (Result<[TweetCellViewModel], FeedError>) {
+        let decoder = JSONDecoder()
+        do {
+            let tweets = try decoder.decode(Response.self, from: data)
+            return .success(tweets.map())
+        } catch {
+            return .failure(.badJSON)
         }
     }
 }
