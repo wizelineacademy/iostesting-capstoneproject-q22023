@@ -13,8 +13,8 @@ class FeedViewModel {
     
     var tweets: [TweetCellViewModel] = []
     
-    let observer: Observer<FetchState> = Observer<FetchState>()
-    let dataManager: FeedDataManagerProtocol
+    private let observer: Observer<FetchState> = Observer<FetchState>()
+    private var dataManager: FeedDataManagerProtocol?
     
     var bind: ((FetchState?) -> Void)? {
         didSet {
@@ -22,18 +22,19 @@ class FeedViewModel {
         }
     }
     
-    init(title: String = "TweetFeed", dataManager: FeedDataManagerProtocol = FeedDataManager()) {
+    init(title: String = "TweetFeed", dataManager: FeedDataManagerProtocol? = FeedDataManager()) {
         self.title = title
         self.dataManager = dataManager
     }
     func fetchTimeline() {
-        dataManager.fetch { result in
+        observer.updateValue(with: .loading)
+        dataManager?.fetch { result in
             switch result {
             case .success(let tweetsReturned):
                 self.tweets = tweetsReturned
-                observer.updateValue(with: .success)
+                self.observer.updateValue(with: .success)
             case .failure:
-                observer.updateValue(with: .failure)
+                self.observer.updateValue(with: .failure)
             }
         }
     }

@@ -10,20 +10,18 @@ import XCTest
 
 final class FeedViewModelTests: XCTestCase {
     
-    func test_setNotNilBindingToObserver_stablishConnection() {
+    func test_setNotNilBindingToObserver_establishConnection() {
         // Given
-        let sut = FeedViewModel()
+        let sut = FeedViewModel(dataManager: nil)
         let exp = expectation(description: "Wait for bind")
         
-        sut.observer.bind { state in
+        sut.bind = { _ in
             // Then
-            XCTAssertEqual(state, .loading)
             exp.fulfill()
         }
         
         // When
-        sut.observer.updateValue(with: .loading)
-        XCTAssertNotNil(sut.observer)
+        sut.fetchTimeline()
         
         wait(for: [exp], timeout: 1.0)
     }
@@ -31,7 +29,7 @@ final class FeedViewModelTests: XCTestCase {
     func test_setNilBindingToObserver_breaksConnection() {
         let sut = FeedViewModel()
         
-        sut.observer.updateValue(with: .loading)
+        sut.fetchTimeline()
         XCTAssertNil(sut.bind)
     }
 }
